@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'AcuminRPro';
+    src: url('../fonts/AcuminRPro.eot');
+    src: url('../fonts/AcuminRPro.eot') format('embedded-opentype'),
+         url('../fonts/AcuminRPro.woff2') format('woff2'),
+         url('../fonts/AcuminRPro.woff') format('woff'),
+         url('../fonts/AcuminRPro.ttf') format('truetype'),
+         url('../fonts/AcuminRPro.svg#AcuminRPro') format('svg');
+}
+@font-face {
+    font-family: 'garreg';
+    src: url('../fonts/garreg.eot');
+    src: url('../fonts/garreg.eot') format('embedded-opentype'),
+         url('../fonts/garreg.woff2') format('woff2'),
+         url('../fonts/garreg.woff') format('woff'),
+         url('../fonts/garreg.ttf') format('truetype'),
+         url('../fonts/garreg.svg#garreg') format('svg');
+}
