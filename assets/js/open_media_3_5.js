@@ -1,5 +1,5 @@
 let searchParams = new URLSearchParams(window.location.search)
-if (searchParams.get('tab') == 'tcs_background' && searchParams.get('page') == 'tcs_plugin_option') 
+if (searchParams.get('tab') == 'ddz_background' && searchParams.get('page') == 'ddz_plugin_option') 
 {
     // Uploading files
     var file_frame;
@@ -41,7 +41,7 @@ if (searchParams.get('tab') == 'tcs_background' && searchParams.get('page') == '
       var img_gallery = [];
       var imageHTML = '';
       jQuery.each( attachment, function( key, value ) {
-          imageHTML += '<li ><img width="200px" height="auto"  id="'+value.id+'" src="'+value.url+'"><input name="tcs_img_arr[]" type="hidden" value="'+value.id+'"></li>';
+          imageHTML += '<li ><img width="200px" height="auto"  id="'+value.id+'" src="'+value.url+'"><input name="ddz_img_arr[]" type="hidden" value="'+value.id+'"></li>';
           img_gallery.push(value.id);
         });
       
@@ -82,8 +82,8 @@ var file_frame;
       // We set multiple to false so only get one image from the uploader
       attachment = file_frame.state().get('selection').first().toJSON();
       
-      jQuery('#tcs_logo').val(attachment.id);
-      jQuery("#tcs_img_url").attr('src', attachment.url);
+      jQuery('#ddz_logo').val(attachment.id);
+      jQuery("#ddz_img_url").attr('src', attachment.url);
 
       
     });
