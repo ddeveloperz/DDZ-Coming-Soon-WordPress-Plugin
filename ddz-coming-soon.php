@@ -20,7 +20,7 @@ add_action("admin_enqueue_scripts", 'ddz_be_head');
 function ddz_be_head(){
     
         wp_enqueue_style ( 'ddz_jquery-ui.css', DDZ_DIR_URL . 'assets/css/jquery-ui.css' );
-        wp_enqueue_style ( 'ddz_jquery.timepicker.css', DDZ_DIR_URL . 'assets/css/jquery.timepicker.css' );
+        wp_enqueue_style ( 'ddz_jquery.timepicker.css', 'https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css' );
         wp_enqueue_style ( 'bootstrap', DDZ_DIR_URL . 'assets/css/bootstrap.css' );
         wp_enqueue_style ( 'ddz_font-awesome.min.css', DDZ_DIR_URL . 'assets/css/font-awesome.min.css' );
         wp_enqueue_style ( 'ddz_colorpicker-css', DDZ_DIR_URL . 'assets/css/colorpicker.css' );
@@ -31,14 +31,11 @@ function ddz_be_head(){
     if( function_exists( 'wp_enqueue_media' ) ){
         wp_enqueue_media();
         wp_enqueue_script ( 'open_media_3_5', DDZ_DIR_URL . 'assets/js/open_media_3_5.js', array(), null );
-    }else{
-        wp_enqueue_style( 'thickbox' );
-        wp_enqueue_script( 'thickbox' );
-        wp_enqueue_script( 'media-upload' );
-        wp_enqueue_script ( 'open_media_3_4', DDZ_DIR_URL . 'assets/js/open_media_3_4.js', array(), null );
     }
-        wp_enqueue_script ( 'ddz_jquery.timepicker.min', DDZ_DIR_URL . 'assets/js/jquery.timepicker.min.js', array(), null );
-        wp_enqueue_script ( 'ddz_colorpicker-js', DDZ_DIR_URL . 'assets/js/colorpicker.js', array(), null );
+        wp_enqueue_script ( 'ddz_jquery.timepicker', DDZ_DIR_URL . 'assets/js/jquery.timepicker.min.js', array(), null );
+        wp_enqueue_script ( 'ddz_colorpicker-js', 'https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js', array(), null );
+       
+ 
         
 }
 

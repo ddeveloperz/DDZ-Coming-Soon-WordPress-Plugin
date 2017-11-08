@@ -200,15 +200,12 @@ function ddz_timout_settings()
 	
 	?>
 	
+<script type="text/javascript">
+	
 
-  <script>
-  $( function() {
-    $( "#datepicker" ).datepicker();
-   
-   	$('#timepicker').timepicker({ timeFormat: 'HH:mm ',startTime: '00:00',});
-  } );
-  
-  </script>
+
+</script>
+
 	<div class="card col-md-12">
 			<div class="card-header">Date of launch</div>
 			 <div class="card-body">
@@ -217,7 +214,7 @@ function ddz_timout_settings()
 					   <label for="hue-demo">Date</label>
 
 						<input name="ddz_lanuch_date"  id="datepicker" value="<?php echo $time['ddz_lanuch_date']; ?>">
-						<input name="ddz_lanuch_time"  id="timepicker" value="<?php echo $time['ddz_lanuch_time']; ?>">
+						<input name="ddz_lanuch_time" type="text" class="timepicker" id="basicExample" value="<?php echo $time['ddz_lanuch_time']; ?>">
 						
 				  </div>
 		
@@ -317,8 +314,12 @@ function ddz_content_settings()
 function ddz_background_settings()
 {
 	$data = ddz_argument_val($_GET['tab']);	
+	$image = wp_get_attachment_url( $data['ddz_background_img'] );
 	
 	?>
+<img id="ddz_background_img" src="<?php echo $image; ?>" width="200px" height="auto" >
+<input type="submit" id="upload_image_button_1" class="button" value="Add Logo"/>
+<input type="hidden" name="ddz_background_img" id="ddz_background_img_id" value="">
 	<script>
   jQuery( function() {
     jQuery( "#gallery_display" ).sortable();
@@ -332,7 +333,7 @@ function ddz_background_settings()
 		 		<div class="form-group">
 				   <label>Select image</label>
 				  
-				   <input type="submit" class="button" id="upload_image_button" value="Add Image">
+				   <input type="submit" class="button" id="upload_image_button_gallery" value="Add Image">
 					<input type="hidden" id="previous_images" value="<?php 
 				  foreach (unserialize($data['ddz_img_arr']) as $value) {
 				  	echo $value.',';

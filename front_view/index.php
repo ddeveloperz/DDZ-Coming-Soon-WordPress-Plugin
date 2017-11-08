@@ -117,7 +117,12 @@ body
 }
 
         #banner {
-            background: url(<?php echo DDZ_DIR_URL ?>front_view/images/2.jpg) no-repeat center top;
+            background: url(<?php  //$image_backgorund = wp_get_attachment_url( ddz_get_option('ddz_background_img') ); 
+                    if (isset($image_backgorund) && !empty($image_backgorund)) {
+                        echo $image_backgorund;
+                    } else {
+                        echo DDZ_DIR_URL.'front_view/images/2.jpg';
+                        } ?> ) no-repeat center top;
             background-size: cover
         }
 h1.maintitle {
@@ -261,8 +266,13 @@ h1.maintitle {
                                     </div>
                                 </div>
                                 <div id="panel-5" class="so-panel widget_inb-countdown inbound-countdown" data-index="5">
-                                    <div class="panel-widget-style panel-widget-style-for-5">
-                                        <div class="countdown wd style-black size-large skrollable skrollable-before" data-days="Days" data-hours="Hours" data-minutes="Minutes" data-seconds="Seconds" data-end="2017,05,26"><div class="counter__group"><div><span class="" style="top: 0px;">1</span></div><div><span class="" style="top: 0px;">3</span></div><div><span class="" style="top: 0px;">8</span></div><p>Days</p></div><div class="counter__group"><div><span class="" style="top: 0px;">1</span></div><div><span class="" style="top: 0px;">7</span></div><p>Hours</p></div><div class="counter__group"><div><span class="" style="top: 0px;">1</span></div><div><span class="" style="top: 0px;">8</span></div><p>Minutes</p></div><div class="counter__group"><div><span class="" style="top: 0px;">1</span></div><div><span class="" style="top: 0px;">9</span></div><p>Seconds</p></div></div>
+                                    <div class="panel-widget-style panel-widget-style-for-5"> <?php $date = ddz_get_option('ddz_lanuch_date');
+                                                                                                     //echo $date;
+               
+
+
+                ?>
+                                        <div class="countdown wd style-black size-large skrollable skrollable-before" data-days="Days" data-hours="Hours" data-minutes="Minutes" data-seconds="Seconds" data-end="<?php echo date("Y,m,d", strtotime($date));  ?>"><div class="counter__group"><div><span class="" style="top: 0px;">1</span></div><div><span class="" style="top: 0px;">3</span></div><div><span class="" style="top: 0px;">8</span></div><p>Days</p></div><div class="counter__group"><div><span class="" style="top: 0px;">1</span></div><div><span class="" style="top: 0px;">7</span></div><p>Hours</p></div><div class="counter__group"><div><span class="" style="top: 0px;">1</span></div><div><span class="" style="top: 0px;">8</span></div><p>Minutes</p></div><div class="counter__group"><div><span class="" style="top: 0px;">1</span></div><div><span class="" style="top: 0px;">9</span></div><p>Seconds</p></div></div>
                                     </div>
                                 </div>
                                 <div id="panel-6" class="so-panel widget_inb-divider inbound-divider" data-index="6">
